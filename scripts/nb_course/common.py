@@ -94,6 +94,22 @@ Antes de dar el lab por cerrado, vuelve a ejecutar de arriba abajo (**Run All**)
 """
 
 
+def prueba(title: str, brief: str, src: str, expect: str) -> list:
+    """Experimento: código de partida que hay que alterar, no solo pegar."""
+    return [
+        md(
+            f"""## Prueba tú — {title}
+
+No copies y listo: **cambia** lo que indica el texto y mira si cuadra con **Qué tienes que ver**.
+
+{brief}
+
+**Qué tienes que ver.** {expect}"""
+        ),
+        code(src.strip()),
+    ]
+
+
 def reto(title: str, brief: str, solucion: str) -> list:
     """Enunciado + solución en celda de código (marcable)."""
     cells = [
@@ -145,7 +161,7 @@ def teoria_head(title: str, intro: str, prev: str, nxt: str) -> str:
 
 {intro}
 
-Ejecuta las celdas **aquí**, en este mismo fichero. No lo copies a otro sitio.
+Ejecuta las celdas **aquí**, en este mismo fichero (clase, juntos). Va **montado**: explicación + código + lo que tienes que ver. Lo que construyes tú está en el **lab**.
 
 Kernel: **Python (NovaShop)**.
 """
